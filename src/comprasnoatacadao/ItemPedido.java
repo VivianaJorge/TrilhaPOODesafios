@@ -55,12 +55,6 @@ public class ItemPedido {
         this.compraComDesc = compraComDesc;
     }
 
-    //VERIFICAR PARA CHAMAR NA CLASSE PRINCIPAL
-    public double calculaValorCompra(int quantProduto, int codProduto){
-        valorCompra = produto.getValor()*quantProduto;
-        return valorCompra;
-    }
-
     public double descontoPorQuantidade(int quantidade, double valorCompra){
         if (quantProduto<5){
             compraComDesc = valorCompra;
