@@ -1,12 +1,9 @@
 package comprasnoatacadao;
 
-import java.util.ArrayList;
-
 public class ItemPedido {
     private double total = 0.00;
-    private double valorCompra = 0.00;
-    private int quantProduto;
-    private int codProduto;
+    private Integer quantProduto;
+    private Integer codProduto;
     private Produto produto;
     private double compraComDesc = 0;
 
@@ -55,7 +52,7 @@ public class ItemPedido {
         this.compraComDesc = compraComDesc;
     }
 
-    public double descontoPorQuantidade(int quantidade, double valorCompra){
+    public double descontoPorQuantidade(double valorCompra){
         if (quantProduto<5){
             compraComDesc = valorCompra;
         } else if(quantProduto>=5 && quantProduto<15){

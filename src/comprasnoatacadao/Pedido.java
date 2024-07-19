@@ -4,9 +4,9 @@ public class Pedido {
 
     private double total = 0.00;
     private ItemPedido item;
-    private int formaPagamento;
+    private String formaPagamento;
 
-    public Pedido(double total, int formaPagamento) {
+    public Pedido(double total, String formaPagamento) {
         this.total = total;
         this.formaPagamento = formaPagamento;
     }
@@ -19,18 +19,18 @@ public class Pedido {
         this.total = total;
     }
 
-    public int getFormaPagamento() {
+    public String getFormaPagamento() {
         return formaPagamento;
     }
 
-    public void setFormaPagamento(int formaPagamento) {
+    public void setFormaPagamento(String formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 
-    public double FormaPagamento(double totalCompra, int pagamento) {
-        if(pagamento == 3){
-            total = totalCompra + (totalCompra * 0.03);
-        } else if (pagamento==2){
+    public double FormaPagamento(double totalCompra, String formaPagamento) {
+        if(formaPagamento.equals("credito")){
+            total = totalCompra - (totalCompra * 0.03);
+        } else if (formaPagamento.equals("dinheiro")){
             total = totalCompra - (totalCompra * 0.05);
         } else{
             total = totalCompra;
